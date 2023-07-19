@@ -1,15 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Bienvenue{% endblock %}
 
 {% block body %}
-    <div class="pink-stripe">
-        <h1>
-            Let's start coding&nbsp;&#129304;
-        </h1>
+
+    <div class="bg-[#D7C2AC] text-white h-20 flex justify-center items-center ">  
+        <h1 class=" text-2xl sm:text-5xl font-extrabold">BIENVENUE JULES</h1>
     </div>
-    <div class="white-stripe">
-        <img src="{{ asset('build/images/LOGO_WILD_CODE_SCHOOL.png') }}"
-             alt="">
+
+    <div class="h-auto py-2 md:h-60  w-full sm:w-9/12 flex flex-col md:flex-row justify-center items-center mx-auto">
+        <img src="{{ asset('build/images/hot_wheels.png')}}" class="h-24 w-64 object-contain"/>
+        <img src="{{ asset('build/images/majorette.png')}}" class="h-24 w-64 object-contain"/>
+        <img src="{{ asset('build/images/siku.png')}}" class="h-24 w-64 object-contain"/>
     </div>
+
+    <div class="h-auto bg-[#D7C2AC] flex flex-col items-center md:flex-row md:justify-center py-6">
+        <div class="flex flex-col md:flex-row justify-center items-center h-52 w-1/2 md:w-2/5">
+            <img src="{{ asset('build/images/voiture.png')}}" class="h-24 w-auto"/>
+            <p class="text-center text-white md:text-2xl p-6 mb-2"><a href="#">Ajoute une voiture</a></p>
+        </div>
+
+        <div class="flex flex-col md:flex-row  justify-center items-center h-52 w-1/2 md:w-2/5">
+            <img src="{{ asset('build/images/livre.png')}}" class="h-24 w-auto"/>
+            <p class="text-center text-white md:text-2xl p-6 mb-2"><a href="#">Consulte la collection</a></p>
+        </div>
+    
+    </div>
+
+    <div class="h-96"></div>
+  
 {% endblock %}
