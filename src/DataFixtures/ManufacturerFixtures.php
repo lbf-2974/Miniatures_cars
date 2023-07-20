@@ -17,6 +17,9 @@ class ManufacturerFixtures extends Fixture
 
          ['name' => "Siku",
          'image' => "build/images/siku.png"],
+
+         ['name' => "Burago",
+         'image' => "build/images/burago.png"],
         ];
 
     public function load(ObjectManager $manager): void

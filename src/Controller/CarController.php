@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Car;
+use App\Entity\Manufacturer;
 use App\Form\CarType;
 use App\Repository\CarRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -20,6 +21,17 @@ class CarController extends AbstractController
             'cars' => $carRepository->findAll(),
         ]);
     }
+
+    #[Route('/manufacturer/{id}', name: 'app_car_choice', methods: ['GET'])]
+    public function choice(CarRepository $carRepository, Manufacturer $manufacturer): Response
+    {
+        $cars = $carRepository->findBy(['manufacturer' => $manufacturer]);
+
+        return $this->render('car/index.html.twig', [
+            'cars' => $cars,
+        ]);
+    }
+
 
     #[Route('/new', name: 'app_car_new', methods: ['GET', 'POST'])]
     public function new(Request $request, CarRepository $carRepository): Response

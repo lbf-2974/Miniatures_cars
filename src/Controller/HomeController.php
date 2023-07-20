@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Wish;
 use App\Form\WishType;
+use App\Repository\ManufacturerRepository;
 use App\Repository\WishRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,8 +14,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home', methods: ['GET', 'POST'])]
-    public function index(Request $request, WishRepository $wishRepository): Response
-    {
+    public function index(
+        Request $request,
+        WishRepository $wishRepository,
+        ManufacturerRepository $manufactRepository
+    ): Response {
+        $manufacturers = $manufactRepository->findAll();
         $wish = new Wish();
         $form = $this->createForm(WishType::class, $wish);
         $form->handleRequest($request);
@@ -28,6 +33,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig', [
             'wish' => $wish,
             'form' => $form,
+            'manufacturers' => $manufacturers
         ]);
     }
 }
