@@ -2,6 +2,11 @@
 
 {% block title %}Bienvenue{% endblock %}
 
+{% block javascripts %}
+{{ parent()}}
+{{ encore_entry_script_tags('wish') }}
+{% endblock %}
+
 {% block body %}
 
     <div class="bg-[#BBCED2] h-32 flex justify-center items-center ">  
