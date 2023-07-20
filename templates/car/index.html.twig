@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Collection{% endblock %}
+
+{% block body %}
+
+<div class="bg-[#21204F] text-white h-20 flex justify-center items-center ">
+    <h1 class=" text-2xl sm:text-5xl font-extrabold text-[#BBCED2]">TA COLLECTION</h1>
+</div>
+
+<div class="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center my-6 ">
+
+    {% for car in cars %}
+    <div class=" border-gray-200 border-4 rounded-lg shadow m-3 w-72 sm:w-56 bg-[#A4A4BA]">
+
+        <img class="rounded-t-lg w-full h-24 object-cover" src="{{ asset(car.image)}}" />
+        <div class="p-5 border-t-4">
+
+            <h5 class="mb-2 sm:text-1xl font-bold">{{ car.brand }}</h5>
+            <p class="mb-3 ">{{ car.model }}</p>
+            <p class="mb-3 italic text-sm">{{ car.manufacturer.name }}</p>
+                <a href="{{ path('app_car_show', {'id': car.id}) }}" class="inline-flex w-full justify-center items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#21204F] rounded-lg border-solid border-2 hover:text-[#BBCED2] hover:border-[#BBCED2]">Voir
+                    <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 5h12m0 0L9 1m4 4L9 9" />
+                    </svg>
+                </a>
+        
+        </div>
+    </div>
+
+    {% else %}
+
+    <div class="h-24">Aucune voiture enregistrée dans ta collection</div>
+    {% endfor %}
+</div>
+
+{% endblock %}

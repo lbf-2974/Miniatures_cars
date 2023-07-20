@@ -1,0 +1,7 @@
+<form method="post" action="{{ path('app_car_delete', {'id': car.id}) }}" onsubmit="return confirm('Es-tu sûr de vouloir supprimer cette voiture?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ car.id) }}">
+    <button class="inline-flex w-36 justify-center items-center p-3 py-2 text-sm font-medium text-center text-white bg-[#21204F] rounded-lg border-solid border-2 hover:text-red-500 hover:border-red-500">Supprimer &nbsp; <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h16M7 8v8m4-8v8M7 1h4a1 1 0 0 1 1 1v3H6V2a1 1 0 0 1 1-1ZM3 5h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5Z"/>
+  </svg></button>
+</form>
+

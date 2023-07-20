@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier une voiture{% endblock %}
+
+{% block body %}
+
+<div class="bg-[#21204F] text-white h-20 flex justify-center items-center ">
+    <h1 class=" text-2xl sm:text-5xl font-extrabold text-[#BBCED2]">MODIFIER UNE VOITURE</h1>
+</div>
+
+<div class=" w-5/6 md:w-1/2 mx-auto mt-10 my-2">
+    {{ include('car/_form.html.twig', {'button_label': 'Mettre à jour'}) }} 
+</div>
+
+<div class="flex justify-center h-14 items-center">
+    <a href="{{ path('app_car_index') }}" class="font-bold text-[#21204F] hover:text-[#BBCED2]">Retour à la collection</a>
+ </div>
+
+   
+{% endblock %}

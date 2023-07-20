@@ -1,9 +1,9 @@
 
-<nav class="bg-[#D7C2AC] border-gray-200">
+<nav class="bg-[#BBCED2] border-gray-200">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="#" class="flex items-center">
+      <a href="{{path('app_home')}}" class="flex items-center">
           <img src="{{ asset('build/images/logo.png')}}" class="h-8 mx-3" alt="" />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap">Mini Cars</span>
+          <span class="self-center text-2xl font-semibold whitespace-nowrap text-[#21204F]">Cars Collection</span>
       </a>
       <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
@@ -12,18 +12,18 @@
           </svg>
       </button>
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-[#D7C2AC] md:flex-row md:space-x-4 md:mt-0 md:border-0">
+        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-[#BBCED2] md:flex-row md:space-x-4 md:mt-0 md:border-0">
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-gray-100 md:border-0 md:px-4 md:py-0 ">Accueil</a>
+            <a href="{{path('app_home')}}" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#21204F] hover:text-[#BBCED2] md:border-0 md:px-4 md:py-0 ">Accueil</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-gray-100 md:border-0 md:px-4 md:py-0">Nouvelle voiture</a>
+            <a href="{{path('app_car_new')}}" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#21204F] hover:text-[#BBCED2] md:border-0 md:px-4 md:py-0">Nouvelle voiture</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-gray-100 md:border-0 md:px-4 md:py-0">Collection</a>
+            <a href="{{path('app_car_index')}}" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#21204F] hover:text-[#BBCED2] md:border-0 md:px-4 md:py-0">Collection</a>
           </li>
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-gray-100 md:border-0 md:px-4 md:py-0">Souhaits</a>
+            <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-[#21204F] hover:text-[#BBCED2] md:border-0 md:px-4 md:py-0">Souhaits</a>
           </li>
         </ul>
       </div>
