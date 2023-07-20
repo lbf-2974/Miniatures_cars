@@ -25,14 +25,18 @@ form.addEventListener('submit', function(event){
     })
 
         .then(response => {
-            if(response.status != 200 ) alert("Erreur");
-            brandInput.value = '';
-            modelInput.value = '';
-            manufacturerList.selectedIndex = 0;
-            toast.style.opacity = '100';
 
-            setTimeout(function() {
-                toast.style.display = 'none';
-            }, 5000);
+            if (response.status === 200) {
+                toast.style.opacity = '100';
+                setTimeout(function() {
+                    toast.style.display = 'none';
+                }, 5000);
+        
+                brandInput.value = '';
+                modelInput.value = '';
+                manufacturerList.selectedIndex = 0;
+            } else {
+                alert("Il y a une erreur, merci de revoir tes saisies.");
+            }
         })
 });

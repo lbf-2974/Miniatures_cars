@@ -13,6 +13,7 @@
         <h1 class=" text-2xl sm:text-3xl font-extrabold text-[#21204F] text-center"> Prêt à démarrer l'aventure? <br>Bienvenue dans ton univers miniature !</h1>
     </div>
 
+<section>
       <div class="h-auto bg-[#21204F] flex flex-col items-center md:flex-row md:justify-center pt-4">
         <div class="flex flex-col justify-center items-center h-48 w-1/2 md:w-2/5">
             <img src="{{ asset('build/images/voiture.png')}}" class="h-24 w-auto"/>
@@ -29,22 +30,22 @@
             <p class="text-center text-[#999B30] hover:text-white md:text-2xl p-6"><a href="#wishes">Note tes souhaits</a></p>
         </div>
     </div>
+</section>
 
 <section>
     <div class="h-12 w-full flex flex-col justify-center items-center mt-4">
         <p class="text-[#21204F] md:text-2xl font-bold">Tes marques favorites</p>
     </div>
     
-
     <div class="h-auto py-2 md:h-52 w-full flex flex-col md:flex-row justify-around items-center mx-auto">
         {% for manufacturer in manufacturers %}
         <a href="{{path('app_car_choice', {'id':manufacturer.id})}}">
-        <img src="{{ asset (manufacturer.image) }}" class="h-24 w-64 object-contain"/></a>
+        <img src="{{ asset (manufacturer.image) }}" class="h-24 py-1 w-64 object-contain"/></a>
         {% endfor %}
     </div>
 </section>    
 
-
+<section>
     <div class="h-auto pt-4 pb-5 md:h-80 bg-[#A4A4BA] flex flex-col items-center md:flex-row md:justify-center" id="wishes">
         <div class="flex flex-col justify-center items-center h-52 w-1/2 md:w-2/5">
             <img src="{{ asset('build/images/wish.png')}} " class="h-24 w-auto"/>
@@ -71,5 +72,6 @@
           </svg>
           </button>
      </div>
+ </section>
   
 {% endblock %}

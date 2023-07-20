@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\WishRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: WishRepository::class)]
 class Wish
@@ -14,9 +15,19 @@ class Wish
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Length(
+        max: 50,
+        maxMessage: "Le nom de la marque est trop long. Limite ta saisie à 50 caractères."
+    )]
     private ?string $brand = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank]
+    #[Assert\Length(
+        max: 50,
+        maxMessage: "Le nom du modèle est trop long. Limite ta saisie à 50 caractères."
+    )]
     private ?string $model = null;
 
     #[ORM\ManyToOne(inversedBy: 'wishes')]
