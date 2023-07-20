@@ -13,47 +13,47 @@ class CarFixtures extends Fixture implements DependentFixtureInterface
 
         ['brand' => "TOYOTA",
          'model' =>  "AE86",
-         'image' =>  "build/images/pixTest.jpg",
+         'image' =>  "build/images/toyotaae86.jpg",
          'manufacturer' => "Hot Wheels"],
 
          ['brand' => "CAMARO",
          'model' =>  "ZL1",
-         'image' =>  "build/images/pixTest.jpg",
+         'image' =>  "build/images/camaro.jpg",
          'manufacturer' => "Hot Wheels"],
 
          ['brand' => "PORSCHE",
          'model' =>  "PANAMERA TURBO S",
-         'image' =>  "build/images/pixTest.jpg",
+         'image' =>  "build/images/porsche.jpg",
          'manufacturer' => "Hot Wheels"],
 
          ['brand' => "MERCEDES",
          'model' =>  "SLS",
-         'image' =>  "build/images/pixTest.jpg",
+         'image' =>  "build/images/mercedessls.jpg",
          'manufacturer' => "Majorette"],
 
          ['brand' => "NISSAN",
          'model' =>  "GT-R",
-         'image' =>  "build/images/pixTest.jpg",
+         'image' =>  "build/images/nissangtr.jpg",
          'manufacturer' => "Majorette"],
 
-         ['brand' => "FORD",
-         'model' =>  "F-150",
-         'image' =>  "build/images/pixTest.jpg",
+         ['brand' => "DODGE",
+         'model' =>  "CHARGER SRT",
+         'image' =>  "build/images/dodge.jpg",
          'manufacturer' => "Majorette"],
 
          ['brand' => "AUDI",
          'model' =>  "RS 5 RACING ",
-         'image' =>  "build/images/pixTest.jpg",
+         'image' =>  "build/images/audirs5.jpg",
          'manufacturer' => "Siku"],
 
          ['brand' => "AUDI",
          'model' =>  "R8 SPYDER",
-         'image' =>  "build/images/pixTest.jpg",
+         'image' =>  "build/images/audir8spyder.jpg",
          'manufacturer' => "Siku"],
 
          ['brand' => "MERCEDES",
          'model' =>  "AMG GT4",
-         'image' =>  "build/images/pixTest.jpg",
+         'image' =>  "build/images/mercedesamggt4.jpg",
          'manufacturer' => "Siku"],
         ];
 

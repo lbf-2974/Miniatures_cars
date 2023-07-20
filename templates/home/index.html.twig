@@ -46,10 +46,10 @@
 </section>    
 
 <section>
-    <div class="h-auto pt-4 pb-5 md:h-80 bg-[#A4A4BA] flex flex-col items-center md:flex-row md:justify-center" id="wishes">
-        <div class="flex flex-col justify-center items-center h-52 w-1/2 md:w-2/5">
-            <img src="{{ asset('build/images/wish.png')}} " class="h-24 w-auto"/>
-            <p class="text-center text-[#21204F] md:text-2xl p-6">Inscris ton souhait <br>pour ta collection</p>
+    <div class="h-auto pt-4 pb-5 md:h-80 bg-[#F6C946] flex flex-col items-center md:flex-row md:justify-center" id="wishes">
+        <div class="flex flex-col md:flex-row justify-center items-center h-48 w-1/2 md:w-2/5">
+            <p class="text-center text-[#21204F] md:text-3xl font-bold p-6 md:mr-8">Réserve ta future <br>voiture pour ta collection</p>
+            <img src="{{ asset('build/images/fleche.png')}} " class="h-24 w-auto"/>
         </div>
         <div class="flex flex-col m-2 w-11/12 md:w-2/5">
             {{ include('wish/_form.html.twig') }}
