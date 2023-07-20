@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Souhaits{% endblock %}
+
+{% block body %}
+
+<div class="bg-[#21204F] text-white h-20 flex justify-center items-center ">
+    <h1 class=" text-2xl sm:text-5xl font-extrabold text-[#BBCED2]">TES SOUHAITS</h1>
+</div>
+
+<div class="flex my-6">
+    <table class="w-1/2 mx-auto text-sm text-left text-gray-500">
+        <thead class="text-xs  text-gray-700 uppercase bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3"> Fabricant</th>
+                <th scope="col" class="px-6 py-3"> Marque</th>
+                <th scope="col" class="px-6 py-3"> Modele</th>
+                <th scope="col" class="px-6 py-3 text-center"> Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for wish in wishes %}
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">{{ wish.manufacturer.name }}</th>
+                <td class="px-6 py-4">{{ wish.brand }}</td>
+                <td class="px-6 py-4">{{ wish.model }} </td>
+                <td class="px-6 py-4 text-center hover:text-red-500 hover:font-bold">
+                    {{ include('wish/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        
+            {% else %}
+            <tr>
+                <td class="text-center"colspan="4">Aucun souhait formulé </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

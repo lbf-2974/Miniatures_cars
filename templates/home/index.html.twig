@@ -8,8 +8,7 @@
         <h1 class=" text-2xl sm:text-3xl font-extrabold text-[#21204F] text-center"> Prêt à démarrer l'aventure? <br>Bienvenue dans ton univers miniature !</h1>
     </div>
 
-
-    <div class="h-auto bg-[#21204F] flex flex-col items-center md:flex-row md:justify-center pt-4">
+      <div class="h-auto bg-[#21204F] flex flex-col items-center md:flex-row md:justify-center pt-4">
         <div class="flex flex-col justify-center items-center h-48 w-1/2 md:w-2/5">
             <img src="{{ asset('build/images/voiture.png')}}" class="h-24 w-auto"/>
             <p class="text-center text-[#F3B942] hover:text-white md:text-2xl p-6"><a href="{{path('app_car_new')}}">Ajoute une voiture</a></p>
@@ -22,7 +21,7 @@
 
         <div class="flex flex-col justify-center items-center h-52 w-1/2 md:w-2/5">
             <img src="{{ asset('build/images/voeux.png')}} " class="h-24 w-auto"/>
-            <p class="text-center text-[#999B30] hover:text-white md:text-2xl p-6"><a href="{{path('app_car_index')}}">Note tes voeux</a></p>
+            <p class="text-center text-[#999B30] hover:text-white md:text-2xl p-6"><a href="#wishes">Note tes souhaits</a></p>
         </div>
     </div>
 
@@ -37,8 +36,31 @@
         <img src="{{ asset('build/images/siku.png')}}" class="h-24 w-64 object-contain"/>
     </div>
 
-    
+    <div class="h-auto pt-4 pb-5 md:h-80 bg-[#A4A4BA] flex flex-col items-center md:flex-row md:justify-center" id="wishes">
+        <div class="flex flex-col justify-center items-center h-52 w-1/2 md:w-2/5">
+            <img src="{{ asset('build/images/wish.png')}} " class="h-24 w-auto"/>
+            <p class="text-center text-[#21204F] md:text-2xl p-6">Inscris ton souhait <br>pour ta collection</p>
+        </div>
+        <div class="flex flex-col m-2 w-11/12 md:w-2/5">
+            {{ include('wish/_form.html.twig') }}
+        </div>
+    </div>
 
-    <div class="h-96 bg-[#A4A4BA]"></div>
+    <div id="toast-success"class=" fixed flex opacity-0 items-center bottom-8 right-10 z-50 max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow"
+    role="alert">
+         <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg">
+             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.008 8.714c1-.097 1.96-.45 2.792-1.028a25.112 25.112 0 0 0 4.454-5.72 1.8 1.8 0 0 1 .654-.706 1.742 1.742 0 0 1 1.65-.098 1.82 1.82 0 0 1 .97 1.128c.075.248.097.51.065.767l-1.562 4.629M4.008 8.714H1v9.257c0 .273.106.535.294.728a.99.99 0 0 0 .709.301h1.002a.99.99 0 0 0 .71-.301c.187-.193.293-.455.293-.728V8.714Zm8.02-1.028h4.968c.322 0 .64.08.925.232.286.153.531.374.716.645a2.108 2.108 0 0 1 .242 1.883l-2.36 7.2c-.288.813-.48 1.354-1.884 1.354-2.59 0-5.39-1.06-7.504-1.66"/>
+            </svg>
+         </div>
+         <div class="ml-3 text-sm font-normal">Ton souhait a bien été enregistré</div>
+          <button type="button" class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"data-dismiss-target="#toast-success" aria-label="Close">
+          <span class="sr-only">Close</span>
+          <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+          </svg>
+          </button>
+     </div>
   
 {% endblock %}

@@ -1,0 +1,7 @@
+<form method="post" action="{{ path('app_wish_delete', {'id': wish.id}) }}" onsubmit="return confirm('Es-tu sûr de vouloir supprimer ce souhait?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ wish.id) }}">
+    <button class="btn"><svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h16M7 8v8m4-8v8M7 1h4a1 1 0 0 1 1 1v3H6V2a1 1 0 0 1 1-1ZM3 5h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5Z"/>
+      </svg>
+    </button>
+</form>
