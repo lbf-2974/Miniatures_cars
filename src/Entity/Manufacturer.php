@@ -24,9 +24,13 @@ class Manufacturer
     #[ORM\OneToMany(mappedBy: 'manufacturer', targetEntity: Car::class, orphanRemoval: true)]
     private Collection $cars;
 
+    #[ORM\OneToMany(mappedBy: 'manufacturer', targetEntity: Wish::class, orphanRemoval: true)]
+    private Collection $wishes;
+
     public function __construct()
     {
         $this->cars = new ArrayCollection();
+        $this->wishes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -82,6 +86,36 @@ class Manufacturer
             // set the owning side to null (unless already changed)
             if ($car->getManufacturer() === $this) {
                 $car->setManufacturer(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Wish>
+     */
+    public function getWishes(): Collection
+    {
+        return $this->wishes;
+    }
+
+    public function addWish(Wish $wish): self
+    {
+        if (!$this->wishes->contains($wish)) {
+            $this->wishes->add($wish);
+            $wish->setManufacturer($this);
+        }
+
+        return $this;
+    }
+
+    public function removeWish(Wish $wish): self
+    {
+        if ($this->wishes->removeElement($wish)) {
+            // set the owning side to null (unless already changed)
+            if ($wish->getManufacturer() === $this) {
+                $wish->setManufacturer(null);
             }
         }
 
